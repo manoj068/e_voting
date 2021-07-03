@@ -1,0 +1,24 @@
+{
+  "name": "pet-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "ipfs": "0.55.4",
+    "ipfs-core": "^0.8.0",
+    "ipfs-http-client": "^48.1.2",
+    "orbit-db": "0.26.1"
+  }
+}
