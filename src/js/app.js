@@ -80,7 +80,7 @@ App = {
           // Render candidate Result
           var candidateTemplate = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + voteCount + "</td></tr>"
           candidatesResults.append(candidateTemplate);
-
+          
           // Render candidate ballot option
           var candidateOption = "<option value='" + id + "' >" + name + "</ option>"
           candidatesSelect.append(candidateOption);
@@ -98,13 +98,10 @@ App = {
       console.warn(error);
     });
   },
-
   castVote: async function () {
     var candidateId = $('#candidatesSelect').val();
 
     console.log(App.ipfsHash);
-
-
     App.contracts.e_voting.deployed().then(function (instance) {
       return instance.vote(candidateId, App.ipfsHash, {
         from: App.account,
@@ -114,12 +111,13 @@ App = {
       // Wait for votes to update
       $("#content").hide();
       $("#loader").show();
+      $("#userHasVoted").html("Thank You. You Have Successfully Voted.")
     }).catch(function (err) {
       console.error(err);
     });
     $("#IPHASH").html(App.ipfsHash);
     // console.log(web3.eth.getBlock(4))
-
+    
   }
 
 };
